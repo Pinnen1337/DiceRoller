@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DiceRoller.HitsPage"
              Title="HitsPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout Spacing="20">
 
         <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
 
             <Grid
-                RowDefinitions="50, 50, 50, 50, 50, 50"
+                RowDefinitions="50, 50, 50, 0, 0"
                 ColumnDefinitions="50, 50, 50, 50, 50, 50"
                 Padding="10"
                 RowSpacing="10"
@@ -22,7 +22,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="0"
-                    x:Name="Count1"
+                    x:Name="HitsCount1"
                     Text="0"
                     HorizontalOptions="Center"/>
 
@@ -34,7 +34,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="1"
-                    x:Name="Count1"
+                    x:Name="HitsCount2"
                     Text="0"
                     HorizontalOptions="Center"/>
 
@@ -46,7 +46,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="2"
-                    x:Name="Count1"
+                    x:Name="HitsCount3"
                     Text="0"
                     HorizontalOptions="Center"/>
 
@@ -58,7 +58,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="3"
-                    x:Name="Count1"
+                    x:Name="HitsCount4"
                     Text="0"
                     HorizontalOptions="Center"/>
 
@@ -70,7 +70,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="4"
-                    x:Name="Count1"
+                    x:Name="HitsCount5"
                     Text="0"
                     HorizontalOptions="Center"/>
 
@@ -82,13 +82,46 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="5"
-                    x:Name="Count1"
+                    x:Name="HitsCount6"
                     Text="0"
                     HorizontalOptions="Center"/>
 
             </Grid>
 
         </HorizontalStackLayout>
-        
+
+        <Label
+            Grid.Row="2"
+            Grid.Column="2"
+            x:Name="ResultLabel"
+            Text="Resultat visas här"
+            FontSize="50"
+            TextColor="White"
+            HorizontalOptions="Center"/>
+
+        <Entry
+            x:Name="DiceInput"
+            Placeholder="Antal attacker"/>
+
+        <Picker
+            x:Name="BSPicker"
+            Title="BS"
+            >
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>2+</x:String>
+                    <x:String>3+</x:String>
+                    <x:String>4+</x:String>
+                    <x:String>5+</x:String>
+                    <x:String>6+</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button
+            Text="Roll"
+            Clicked="OnRollClicked"
+            BackgroundColor="Green"/>
+
     </VerticalStackLayout>
 </ContentPage>

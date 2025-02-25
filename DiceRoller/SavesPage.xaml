@@ -22,7 +22,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="0"
-                    x:Name="Count1"
+                    x:Name="SavesCount1"
                     Text="0"
                     HorizontalOptions="Center"/>
 
@@ -34,7 +34,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="1"
-                    x:Name="Count1"
+                    x:Name="SavesCount2"
                     Text="0"
                     HorizontalOptions="Center"/>
 
@@ -46,7 +46,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="2"
-                    x:Name="Count1"
+                    x:Name="SavesCount3"
                     Text="0"
                     HorizontalOptions="Center"/>
 
@@ -58,7 +58,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="3"
-                    x:Name="Count1"
+                    x:Name="SavesCount4"
                     Text="0"
                     HorizontalOptions="Center"/>
 
@@ -70,7 +70,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="4"
-                    x:Name="Count1"
+                    x:Name="SavesCount5"
                     Text="0"
                     HorizontalOptions="Center"/>
 
@@ -82,7 +82,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="5"
-                    x:Name="Count1"
+                    x:Name="SavesCount6"
                     Text="0"
                     HorizontalOptions="Center"/>
 
