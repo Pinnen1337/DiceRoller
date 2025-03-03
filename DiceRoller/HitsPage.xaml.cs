@@ -43,7 +43,15 @@ public partial class HitsPage : ContentPage
 		HitsCount5.Text = hitDiceCounter[4].ToString();
 		HitsCount6.Text = hitDiceCounter[5].ToString();
 
-		HitsLabel.Text = $"Du fick {hits} träffar!";
+		if (hits == 1)
+		{
+			HitsLabel.Text = $"Du fick {hits} träff!";
+		}
+		else
+		{
+			HitsLabel.Text = $"Du fick {hits} träffar!";
+		}
+
 		Preferences.Set("HitsCount", hits);
     }
 }
