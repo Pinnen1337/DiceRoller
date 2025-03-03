@@ -6,4 +6,9 @@ public partial class SavesPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void OnSavesRollClicked(object sender, EventArgs e)
+    {
+
+    }
 }

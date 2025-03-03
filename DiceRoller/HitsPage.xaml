@@ -93,8 +93,8 @@
         <Label
             Grid.Row="2"
             Grid.Column="2"
-            x:Name="ResultLabel"
-            Text="Resultat visas här"
+            x:Name="HitsLabel"
+            Text=""
             FontSize="50"
             TextColor="White"
             HorizontalOptions="Center"/>
@@ -105,7 +105,8 @@
 
         <Picker
             x:Name="BSPicker"
-            Title="BS"
+            Title="BS / WS"
+            WidthRequest="150"
             >
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
@@ -120,7 +121,7 @@
 
         <Button
             Text="Roll"
-            Clicked="OnRollClicked"
+            Clicked="OnHitsRollClicked"
             BackgroundColor="Green"/>
 
     </VerticalStackLayout>
