@@ -63,22 +63,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="HitsPage.xaml">
+	  <MauiXaml Update="Views\HitsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="SavesPage.xaml">
+	  <MauiXaml Update="Views\SavesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="StartPage.xaml">
+	  <MauiXaml Update="Views\StartPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="WoundsPage.xaml">
+	  <MauiXaml Update="Views\WoundsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="View\" />
 	</ItemGroup>
 
 </Project>
