@@ -20,7 +20,7 @@ namespace DiceRoller.Models
         {
             int hits = 0;
             int[] hitDiceCounter = new int[6];
-            for (int i = 0; i < diceCount; i++)
+            for (int h = 0; h < diceCount; h++)
             {
                 int roll = RollDice();
                 hitDiceCounter[roll - 1]++;
@@ -40,7 +40,7 @@ namespace DiceRoller.Models
 
             int woundThreshold = CalculateWoundThreshold(strength, toughness);
 
-            for (int i = 0; i < hits; i++)
+            for (int w = 0; w < hits; w++)
             {
                 int roll = RollDice();
                 woundDiceCounter[roll - 1]++;
@@ -64,6 +64,24 @@ namespace DiceRoller.Models
             if (strength * 2 <= toughness)
                 return 6;
             return 5;
+        }
+
+        public static (int totalSaves, int[] savesCounts) RollSaves(int wounds, int saveThreshold, int ap)
+        {
+            int saves = 0;
+            int[] saveDiceCounter = new int[6];
+            int adjustedSaveThreshold = saveThreshold - ap;
+
+            for (int s = 0; s < wounds; s++)
+            {
+                int roll = RollDice();
+                saveDiceCounter[roll - 1]++;
+                if (roll >= adjustedSaveThreshold)
+                {
+                    saves++;
+                }
+            }
+            return (saves, saveDiceCounter);
         }
     }
 }

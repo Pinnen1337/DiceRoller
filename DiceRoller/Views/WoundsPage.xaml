@@ -23,7 +23,7 @@
                     Grid.Row="1"
                     Grid.Column="0"
                     x:Name="WoundsCount1"
-                    Text="0"
+                    Text="{Binding WoundsCounter[0]}"
                     HorizontalOptions="Center"/>
 
                 <Image
@@ -35,7 +35,7 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     x:Name="WoundsCount2"
-                    Text="0"
+                    Text="{Binding WoundsCounter[1]}"
                     HorizontalOptions="Center"/>
 
                 <Image
@@ -47,7 +47,7 @@
                     Grid.Row="1"
                     Grid.Column="2"
                     x:Name="WoundsCount3"
-                    Text="0"
+                    Text="{Binding WoundsCounter[2]}"
                     HorizontalOptions="Center"/>
 
                 <Image
@@ -59,7 +59,7 @@
                     Grid.Row="1"
                     Grid.Column="3"
                     x:Name="WoundsCount4"
-                    Text="0"
+                    Text="{Binding WoundsCounter[3]}"
                     HorizontalOptions="Center"/>
 
                 <Image
@@ -71,7 +71,7 @@
                     Grid.Row="1"
                     Grid.Column="4"
                     x:Name="WoundsCount5"
-                    Text="0"
+                    Text="{Binding WoundsCounter[4]}"
                     HorizontalOptions="Center"/>
 
                 <Image
@@ -83,7 +83,7 @@
                     Grid.Row="1"
                     Grid.Column="5"
                     x:Name="WoundsCount6"
-                    Text="0"
+                    Text="{Binding WoundsCounter[5]}"
                     HorizontalOptions="Center"/>
 
             </Grid>
@@ -93,15 +93,15 @@
         <Label
             Grid.Row="2"
             Grid.Column="2"
-            x:Name="ResultLabel"
-            Text="Resultat visas här"
+            x:Name="WoundsLabel"
+            Text=""
             FontSize="50"
             TextColor="White"
             HorizontalOptions="Center"/>
 
         <Entry
             x:Name="DiceInput"
-            Placeholder="Antal attacker"/>
+            Placeholder="Antal träffar"/>
 
         <HorizontalStackLayout HorizontalOptions="Center">
 

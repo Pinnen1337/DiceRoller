@@ -12,7 +12,7 @@ namespace DiceRoller.ViewModels
     public class HitsViewModel : INotifyPropertyChanged
     {
         private int hits;
-        private int[] hitCounts = new int[6];
+        private int[] hitsCounter = new int[6];
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -26,19 +26,19 @@ namespace DiceRoller.ViewModels
             }
         }
 
-        public int[] HitCounts
+        public int[] HitsCounter
         {
-            get => hitCounts;
+            get => hitsCounter;
             set
             {
-                hitCounts = value;
+                hitsCounter = value;
                 OnPropertyChanged();
             }
         }
 
         public void RollHits(int diceCount, int bsThreshold)
         {
-            (Hits, HitCounts) = Models.DiceRoller.RollHits(diceCount, bsThreshold);
+            (Hits, HitsCounter) = Models.DiceRoller.RollHits(diceCount, bsThreshold);
         }
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")

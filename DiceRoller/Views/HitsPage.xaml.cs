@@ -38,7 +38,5 @@ public partial class HitsPage : ContentPage
 		{
             HitsLabel.Text = $"Du fick {viewModel.Hits} träffar";
         }
-		
-
     }
 }

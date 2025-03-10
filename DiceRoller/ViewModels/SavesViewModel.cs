@@ -8,35 +8,35 @@ using System.Threading.Tasks;
 
 namespace DiceRoller.ViewModels
 {
-    public class WoundsViewModel : INotifyPropertyChanged
+    class SavesViewModel : INotifyPropertyChanged
     {
-        private int wounds = 0;
-        private int[] woundsCounter = new int[6];
+        private int saves = 0;
+        private int[] savesCounter = new int[6];
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public int Wounds
+        public int Saves
         {
-            get => wounds;
+            get => saves;
             set
             {
-                wounds = value;
+                saves = value;
                 OnPropertyChanged();
             }
         }
 
-        public int[] WoundsCounter
+        public int[] SavesCounter
         {
-            get => woundsCounter;
+            get => savesCounter;
             set
             {
-                woundsCounter = value;
+                savesCounter = value;
                 OnPropertyChanged();
             }
         }
-        public void RollWounds(int hits, int strength, int toughness)
+        public void RollSaves(int wounds, int saveThreshold, int apValue)
         {
-            (Wounds, WoundsCounter) = Models.DiceRoller.RollWounds(hits, strength, toughness);
+            (Saves, SavesCounter) = Models.DiceRoller.RollSaves(wounds, saveThreshold, apValue);
         }
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")

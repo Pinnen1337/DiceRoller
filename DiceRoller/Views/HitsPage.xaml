@@ -23,7 +23,7 @@
                     Grid.Row="1"
                     Grid.Column="0"
                     x:Name="HitsCount1"
-                    Text="0"
+                    Text="{Binding HitsCounter[0]}"
                     HorizontalOptions="Center"/>
 
                 <Image
@@ -35,7 +35,7 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     x:Name="HitsCount2"
-                    Text="0"
+                    Text="{Binding HitsCounter[1]}"
                     HorizontalOptions="Center"/>
 
                 <Image
@@ -47,7 +47,7 @@
                     Grid.Row="1"
                     Grid.Column="2"
                     x:Name="HitsCount3"
-                    Text="0"
+                    Text="{Binding HitsCounter[2]}"
                     HorizontalOptions="Center"/>
 
                 <Image
@@ -59,7 +59,7 @@
                     Grid.Row="1"
                     Grid.Column="3"
                     x:Name="HitsCount4"
-                    Text="0"
+                    Text="{Binding HitsCounter[3]}"
                     HorizontalOptions="Center"/>
 
                 <Image
@@ -71,7 +71,7 @@
                     Grid.Row="1"
                     Grid.Column="4"
                     x:Name="HitsCount5"
-                    Text="0"
+                    Text="{Binding HitsCounter[4]}"
                     HorizontalOptions="Center"/>
 
                 <Image
@@ -83,9 +83,8 @@
                     Grid.Row="1"
                     Grid.Column="5"
                     x:Name="HitsCount6"
-                    Text="0"
+                    Text="{Binding HitsCounter[5]}"
                     HorizontalOptions="Center"/>
-
             </Grid>
 
         </HorizontalStackLayout>

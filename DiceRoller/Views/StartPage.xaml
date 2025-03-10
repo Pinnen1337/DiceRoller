@@ -22,7 +22,7 @@
 
         <Label
             x:Name="JokeLabel"
-            Text="Skämt"
+            Text=""
             FontSize="32"
             HorizontalOptions="Center"
         ></Label>
