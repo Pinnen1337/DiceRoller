@@ -1,5 +1,5 @@
+using DiceRoller.Models;
 using DiceRoller.ViewModels;
-
 namespace DiceRoller;
 
 public partial class SavesPage : ContentPage
@@ -8,11 +8,20 @@ public partial class SavesPage : ContentPage
 	public SavesPage()
 	{
 		InitializeComponent();
-		viewModel = new SavesViewModel();
-		BindingContext = viewModel;
-	}
+        viewModel = new SavesViewModel();
+        BindingContext = viewModel;
+    }
 
-	private void OnSavesRollClicked(object sender, EventArgs e)
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        SavesLabel.Text = $"Du har {RollSave.Instance.Wounds} sår att rädda!";
+
+        DiceInput.Text = RollSave.Instance.Wounds.ToString();
+    }
+
+    private void OnSavesRollClicked(object sender, EventArgs e)
 	{
 		if (!int.TryParse(DiceInput.Text, out int diceCount) || diceCount < 0)
 		{
@@ -29,9 +38,11 @@ public partial class SavesPage : ContentPage
 		int saveThreshold = int.Parse(SavesPicker.SelectedItem.ToString().TrimEnd('+'));
 		int apValue = int.Parse(APPicker.SelectedItem.ToString());
 
-		viewModel.RollSaves(diceCount, saveThreshold, apValue);
+        viewModel.RollSaves(RollSave.Instance.Wounds, saveThreshold, apValue);
 
-		SavesLabel.Text = $"Du räddade {viewModel.Saves} sår";
-		
+        RollSave.Instance.Saves = viewModel.Saves;
+        RollSave.Instance.SavesCounter = viewModel.SavesCounter;
+
+        SavesLabel.Text = viewModel.Saves == 1 ? $"Du lyckades rädda {viewModel.Saves} skada!" : $"Du lyckades rädda {viewModel.Saves} skador!";
     }
 }

@@ -21,6 +21,6 @@ public partial class StartPage : ContentPage
 
     private async void OnStartClicked(object sender, EventArgs e)
     {
-		Application.Current.MainPage = new AppShell();
+        Application.Current.MainPage = new AppShell();
     }
 }

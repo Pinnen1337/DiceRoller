@@ -1,3 +1,4 @@
+using DiceRoller.Models;
 using DiceRoller.ViewModels;
 
 namespace DiceRoller;
@@ -13,8 +14,8 @@ public partial class HitsPage : ContentPage
 	}
 
     private void OnHitsRollClicked(object sender, EventArgs e)
-    {
-		if (!int.TryParse(DiceInput.Text, out int diceCount) || diceCount < 0)
+	{
+		if (!int.TryParse(DiceInput.Text, out int diceCount) || diceCount <= 0)
 		{
 			HitsLabel.Text = "Ange attacker!";
 			return;
@@ -30,13 +31,9 @@ public partial class HitsPage : ContentPage
 
 		viewModel.RollHits(diceCount, bsThreshold);
 
-		if (viewModel.Hits == 1)
-		{
-			HitsLabel.Text = $"Du fick {viewModel.Hits} träff";
-		}
-		else
-		{
-            HitsLabel.Text = $"Du fick {viewModel.Hits} träffar";
-        }
-    }
+		RollSave.Instance.Hits = viewModel.Hits;
+		RollSave.Instance.HitsCounter = viewModel.HitsCounter;
+
+		HitsLabel.Text = viewModel.Hits == 1 ? $"Du fick {viewModel.Hits} träff!" : $"Du fick {viewModel.Hits} träffar!";
+	}
 }
